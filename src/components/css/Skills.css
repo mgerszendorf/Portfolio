@@ -1,0 +1,59 @@
+.skills{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 5vh 2rem;
+}
+
+.skills_header h2, .skills_header h2 span{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.skills_header h2 span{
+    color: #F6C004;
+}
+
+.skills_subtitle p{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.skills_second_container{
+    padding-top: 4rem;
+}
+
+.first_container_technologies div p, .second_container_technologies div p{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.skills_first_container{
+    width: 100%;
+}
+
+.first_container_technologies, .second_container_technologies{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.first_container_technologies div, .second_container_technologies div{
+    flex-basis: 33.33%;
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.first_container_technologies div img, .second_container_technologies div img{
+    width: 25vw;
+    max-width: 128px;
+}
+
+@media all and (min-width: 1024px){
+    .skills{
+        padding: 10vh 5rem;
+    }
+
+
+}

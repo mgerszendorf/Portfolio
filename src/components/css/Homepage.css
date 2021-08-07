@@ -1,0 +1,262 @@
+.top_bar ul, .cv, .outer_stripes{
+    display: none;
+}
+
+.homepage{
+    /* width: 100vw; */
+    height: 100vh;
+    padding: 0 2rem;
+}
+
+.homepage_wrapper{
+    height: 90vh;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.burger_mobile div {
+    height: 0.3rem;
+    background-color: #F6C004;
+    margin: 0.7rem 0 0.7rem auto;
+    border-radius: 8px;
+    transition: all .3s ease;
+}
+
+.burger_mobile div:nth-of-type(1){
+    width: 2.2rem;
+}
+
+.burger_mobile div:nth-of-type(2){
+    width: 1.7rem;
+}
+
+.burger_mobile div:nth-of-type(3){
+    width: 2.5rem;
+}
+
+.top_bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding-top: 1rem;
+}
+
+.burger_language_cv_container, .language{
+    display: flex;
+    align-items: center;
+}
+
+.language img {
+    height: 25px;
+    padding: 0 2rem;
+}
+
+.main_txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.first_txt p, .second_txt p:nth-of-type(1), .third_txt p {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.second_txt{
+    display: flex;
+    align-items: center;
+}
+
+.yellow_txt {
+    font-size: 1.7rem;
+    color: #F6C004;
+    max-width: 100px;
+    margin-left: 2rem;
+    letter-spacing: .7px;
+}
+
+.go_down_btn{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #F6C004;
+    color: #fff;
+    margin-bottom: 5vh;
+    cursor: pointer;
+    transition: background-color .2s;
+    z-index: 99;
+}
+
+.RiArrowDropDownLine{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+}
+
+.go_down_btn:hover{
+    color: #F6C004;
+    border: 2px solid #F6C004;
+    background-color: #fff;
+}
+
+@media all and (min-width: 425px){
+    .first_txt p, .second_txt p:nth-of-type(1), .third_txt p {
+        font-size: 5rem;
+    }
+
+    .yellow_txt {
+        font-size: 2rem;
+    }
+}
+
+@media all and (min-width: 768px){
+    .first_txt p, .second_txt p:nth-of-type(1), .third_txt p {
+        font-size: 6rem;
+    }
+
+    .yellow_txt {
+        font-size: 2.3rem;
+    }
+}
+
+@media all and (min-width: 1024px){
+    .top_bar ul, .cv, .outer_stripes{
+        display: block;
+    }
+
+    .burger_mobile{
+        display: none;
+    }
+
+    .language img {
+        height: 35px;
+    }
+
+    .first_txt p, .second_txt p:nth-of-type(1), .third_txt p {
+        font-size: 4rem;
+    }
+
+    .yellow_txt {
+        font-size: 1.7rem;
+    }
+
+    .go_down_btn{
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 7vh;
+    }
+    
+    .RiArrowDropDownLine{
+        font-size: 2.5rem;
+    }
+
+    .homepage{
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .top_bar ul{
+        display: flex;
+    }
+
+    .top_bar ul li a{
+        display: block;
+        color: #818498;
+        padding: 1rem 2rem;
+        transition: .2s;
+    }
+
+    .top_bar ul li a:hover{
+        color: #F6C004;
+    }
+
+    .cv{
+        color: #F6C004;
+        border: 2px solid #F6C004;
+        padding: .5rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .cv:hover{
+        color: #fff;
+        background-color: #F6C004;
+    }
+
+    .outer_stripes{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 2rem;
+    }
+
+    .outer_stripes_left, .outer_stripes_right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 30px;
+    }
+
+    .line{
+        width: 1px;
+        height: 100px;
+        background-color: #818498;
+        margin-top: 20px;
+    }
+
+    .github_icon, .linkedin_icon{
+        font-size: 1.5rem;
+        color: #818498;
+        transition: .2s;
+    }
+
+    .github_icon:hover, .linkedin_icon:hover{
+        color: #F6C004;
+    }
+
+    .outer_stripes_left a{
+        padding: 10px 0;
+    }
+
+    .outer_stripes_right p {
+        color: #818498;
+        transform: rotate(90deg);
+        margin-bottom: 100px;
+    }
+}
+
+@media all and (min-width: 1300px){
+    .first_txt p, .second_txt p:nth-of-type(1), .third_txt p {
+        font-size: 5rem;
+    }
+
+    .yellow_txt {
+        font-size: 2rem;
+    }
+
+    .go_down_btn{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    
+    .RiArrowDropDownLine{
+        font-size: 3rem;
+    }
+}
