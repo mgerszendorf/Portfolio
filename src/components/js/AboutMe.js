@@ -28,10 +28,10 @@ function AboutMe(props) {
         </div>
         <div className="right_area_am">
           <div className="photo_container">
+            <div className="photo_background"></div>
             <div className="my_photo">
               <img src={my_photo} alt="My pic" />
             </div>
-            <div className="photo_background"></div>
           </div>
         </div>
       </div>

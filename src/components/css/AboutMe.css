@@ -1,6 +1,7 @@
 .about_me{
-    /* background-color: rgb(247, 247, 247); */
-    /* background-color: #F6C004; */
+    /* background-color: #F1F1EF; */
+    /* background-color: #F6F6F8; */
+    /* background-color: #FBF5E2; */
 }
 
 .about_me_wrapper{
@@ -91,7 +92,7 @@
     right: 0;
     bottom: 0;
     background-color: #F6C004;
-    z-index: -10;
+    z-index: -1;
 }
 
 .my_photo img{

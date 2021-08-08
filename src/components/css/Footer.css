@@ -1,0 +1,27 @@
+.footer{
+    background-color: #F6C004;
+}
+
+.footer_wrapper{
+    max-width: 1440px;
+    margin: 5vh auto 0 auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+.github_footer, .linkedin_footer{
+    color: #000;
+    font-size: 24px;
+    margin: 1rem .5rem;
+}
+
+.footer_wrapper a{
+    font-size: 12px;
+    color: #000;
+    letter-spacing: 0.5px;
+}
+
+.footer_wrapper p{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}

@@ -1,0 +1,52 @@
+.c_right_area{
+    display: none;
+}
+
+.contact_wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 10vh 2rem 5vh 2rem;
+}
+
+.contact_wrapper h2, .contact_wrapper h2 span{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.contact_wrapper h2 span{
+    color: #F6C004;
+}
+
+.c_left_area p{
+    font-size: 16px;
+}
+
+.c_left_area div p{
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.c_email, .c_phone{
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.c_email_icon, .c_phone_icon{
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+@media all and (min-width: 1024px){
+    .c_right_area{
+        display: block;
+    }
+
+    .c_right_area, .c_left_area{
+        width: 50%;
+    }
+
+    .c_left_area p{
+        max-width: 500px;
+    }
+}

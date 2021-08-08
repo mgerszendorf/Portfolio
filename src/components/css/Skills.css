@@ -49,11 +49,3 @@
     width: 25vw;
     max-width: 128px;
 }
-
-@media all and (min-width: 1024px){
-    .skills{
-        padding: 10vh 5rem;
-    }
-
-
-}
