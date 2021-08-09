@@ -119,4 +119,9 @@
     .left_area_am{
         max-width: 450px;
     }
+
+    .more_info a::before{
+        width: 150px;
+        left: -150px;
+    }
 }

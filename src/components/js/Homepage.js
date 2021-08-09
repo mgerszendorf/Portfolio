@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link as LinkScroll } from "react-scroll";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import poland from "../img/poland.png";
 import united_kingdom from "../img/united-kingdom.png";
@@ -6,26 +8,94 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
 
 function Homepage(props) {
+  const [burger, setBurger] = useState(false);
+
+  function handleClickBurger() {
+    setBurger(!burger);
+    if (burger) {
+      document.body.classList.remove("js-mobile-menu-open");
+    } else {
+      document.body.classList.add("js-mobile-menu-open");
+    }
+  }
+
+  console.log(burger);
+
+  function disableActiveMenu() {
+    document.body.classList.remove("js-mobile-menu-open");
+  }
+
   return (
     <section className="homepage">
       <nav className="top_bar">
-        <Link to="/">
+        <LinkScroll
+          activeClass="active"
+          to="/"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
           <div className="logo">
             <img src={props.logo} alt="My logo" />
           </div>
-        </Link>
-        <ul>
+        </LinkScroll>
+        <ul className={burger ? "active_burger" : "nonactive_burger"}>
           <li>
-            <Link to="/about_me">About me</Link>
+            <LinkScroll
+              activeClass="active"
+              to="about_me"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              About me
+            </LinkScroll>
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
+            <LinkScroll
+              activeClass="active"
+              to="projects"
+              spy={true}
+              smooth={true}
+              duration={500}
+              onClick={() => {
+                setBurger(false);
+                disableActiveMenu();
+              }}
+            >
+              Projects
+            </LinkScroll>
           </li>
           <li>
-            <Link to="/skills">Skills</Link>
+            <LinkScroll
+              activeClass="active"
+              to="skills"
+              spy={true}
+              smooth={true}
+              duration={500}
+              onClick={() => {
+                setBurger(false);
+                disableActiveMenu();
+              }}
+            >
+              Skills
+            </LinkScroll>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <LinkScroll
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              duration={500}
+              onClick={() => {
+                setBurger(false);
+                disableActiveMenu();
+              }}
+            >
+              Contact
+            </LinkScroll>
           </li>
         </ul>
         <div className="burger_language_cv_container">
@@ -41,7 +111,12 @@ function Homepage(props) {
           <div className="cv">
             <p>Resume</p>
           </div>
-          <div className="burger_mobile">
+          <div
+            className="burger_mobile"
+            onClick={() => {
+              handleClickBurger();
+            }}
+          >
             <div></div>
             <div></div>
             <div></div>
@@ -62,9 +137,18 @@ function Homepage(props) {
             <p>Gerszendorf</p>
           </div>
         </div>
-        <div className="go_down_btn">
-          <RiArrowDropDownLine className="RiArrowDropDownLine" />
-        </div>
+        <LinkScroll
+          activeClass="active"
+          to="about_me"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <div className="go_down_btn">
+            <RiArrowDropDownLine className="RiArrowDropDownLine" />
+          </div>
+        </LinkScroll>
         <div className="outer_stripes">
           <div className="outer_stripes_left">
             <a href="https://github.com/mgerszendorf">

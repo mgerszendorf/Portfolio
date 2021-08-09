@@ -1,6 +1,39 @@
-.top_bar ul, .cv, .outer_stripes{
+ .nonactive_burger, .cv, .outer_stripes{
     display: none;
 }
+/* ACTIVE MOBILE MENU - START */
+.active_burger {
+    position: absolute;
+    top: 73.9px;
+    left: 0;
+    height: calc(100vh - 73.9px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99;
+    line-height: calc((100vh - 73.9px)/4);
+    text-align: center;
+    background-color: #fff;
+    transform: translate(-150%, -150%);
+    transition: transform .5s linear;
+}
+
+.active_burger a{
+    display: block;
+    width: 100vw;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.active_burger a:hover{
+    color: #F6C004;
+}
+
+.active_burger{
+    transform: translate(0%, 0%);
+}
+/* ACTIVE MOBILE MENU - END */
 
 .homepage{
     /* width: 100vw; */
@@ -92,7 +125,6 @@
     margin-bottom: 5vh;
     cursor: pointer;
     transition: background-color .2s;
-    z-index: 99;
 }
 
 .RiArrowDropDownLine{
@@ -103,7 +135,7 @@
     font-size: 3.5rem;
 }
 
-.go_down_btn:hover{
+.go_down_btn:active{
     color: #F6C004;
     border: 2px solid #F6C004;
     background-color: #fff;
@@ -154,6 +186,13 @@
         width: 3rem;
         height: 3rem;
         margin-bottom: 7vh;
+        z-index: 99;
+    }
+
+    .go_down_btn:hover{
+        color: #F6C004;
+        border: 2px solid #F6C004;
+        background-color: #fff;
     }
     
     .RiArrowDropDownLine{
@@ -174,6 +213,7 @@
         color: #818498;
         padding: 1rem 2rem;
         transition: .2s;
+        cursor: pointer;
     }
 
     .top_bar ul li a:hover{

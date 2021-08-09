@@ -78,6 +78,12 @@ function Projects() {
     "Todo app",
     "Shortly",
   ];
+  const projectTxt = [
+    "Acme is an example of a hotel website. The website was designed by Dutkiewicz Design. Marcin created a graphic design in Figma and I programmed everything myself. This project is currently in development. The application does not yet have a database connection. I plan to build this with Node.js, MongoDB and Express.js. Ultimately, the site will follow the MERN stack.",
+    "Pomodoro is an application designed for better time management. The timer counts down four 25-minute learning sections and 5-minute breaks between them. There is a 15-minute break after all sections are completed. ",
+    "Recover is one of the first websites I created. The graphic design was done by Marcin from Dutkiewicz Design. This project allowed me to get to know HTML, CSS and the basics of JavaScript better",
+    "An application designed to better organize your time. It allows you to set the priority of tasks and counts already completed. Adds a due date for the task. ",
+  ];
 
   return (
     <section className="projects">
@@ -106,15 +112,7 @@ function Projects() {
           </div>
           <div className="p_right_area">
             <h3>{projectTitle[activeSlide]}</h3>
-            <p>
-              ontrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of classical Latin literature from 45 BC,
-              making it over 2000 years old. Richard McClintock, a Latin
-              professor at Hampden-Sydney College in Virginia, looked up one of
-              the more obscure Latin words, consectetur, from a Lorem Ipsum
-              passage, and going through the cites of the word in classical
-              literature, discovered the undoubtable source.
-            </p>
+            <p>{projectTxt[activeSlide]}</p>
             <p className="link">
               Live: <a href={url[activeSlide]}>{url[activeSlide]}</a>
             </p>

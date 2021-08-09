@@ -5,7 +5,7 @@
 .contact_wrapper{
     max-width: 1440px;
     margin: 0 auto;
-    padding: 10vh 2rem 5vh 2rem;
+    padding: 5vh 2rem;
 }
 
 .contact_wrapper h2, .contact_wrapper h2 span{
@@ -48,5 +48,9 @@
 
     .c_left_area p{
         max-width: 500px;
+    }
+
+    .contact_wrapper{
+        padding: 10vh 2rem 5vh 2rem;
     }
 }

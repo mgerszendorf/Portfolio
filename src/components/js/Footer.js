@@ -19,7 +19,6 @@ function Footer(props) {
             <FaLinkedinIn className="linkedin_footer" />
           </a>
         </div>
-        <Link>Polityka prywatności</Link>
         <p>© 2021 Marek Gerszendorf. All rights reserved</p>
       </div>
     </section>
