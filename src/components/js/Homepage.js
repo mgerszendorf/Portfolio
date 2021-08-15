@@ -49,7 +49,7 @@ function Homepage(props) {
               smooth={true}
               duration={500}
             >
-              About me
+              {props.language ? "O mnie" : "About me"}
             </LinkScroll>
           </li>
           <li>
@@ -64,7 +64,7 @@ function Homepage(props) {
                 disableActiveMenu();
               }}
             >
-              Projects
+              {props.language ? "Projekty" : "Projects"}
             </LinkScroll>
           </li>
           <li>
@@ -79,7 +79,7 @@ function Homepage(props) {
                 disableActiveMenu();
               }}
             >
-              Skills
+              {props.language ? "Umiejętności" : "Skills"}
             </LinkScroll>
           </li>
           <li>
@@ -94,7 +94,7 @@ function Homepage(props) {
                 disableActiveMenu();
               }}
             >
-              Contact
+              {props.language ? "Kontakt" : "Contact"}
             </LinkScroll>
           </li>
         </ul>
@@ -103,14 +103,20 @@ function Homepage(props) {
             <div className="language">
               <img
                 onClick={props.handleLanguage}
-                src={props.language ? poland : united_kingdom}
-                alt={props.language ? "Polish language" : "English language"}
+                src={props.language ? united_kingdom : poland}
+                alt={props.language ? "English language" : "Polish language"}
               />
             </div>
           </Link>
-          <div className="cv">
-            <p>Resume</p>
-          </div>
+          <Link
+            to={props.language ? "/files/cv_pl.pdf" : "/files/cv_eng.pdf"}
+            target="_blank"
+            download
+          >
+            <div className="cv">
+              {props.language ? <p>CV</p> : <p>Resume</p>}
+            </div>
+          </Link>
           <div
             className="burger_mobile"
             onClick={() => {

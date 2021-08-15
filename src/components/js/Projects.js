@@ -40,7 +40,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-function Projects() {
+function Projects(props) {
   const [activeSlide, setActiveSlider] = useState(0);
 
   const settings = {
@@ -78,18 +78,27 @@ function Projects() {
     "Todo app",
     "Shortly",
   ];
-  const projectTxt = [
+  const projectTxtPl = [
+    'Acme jest przykładową stroną internetową hotelu. Stronę zaprojektował Dutkiewicz Design. Marcin stworzył projekt graficzny w Figmie a ja zająłem się programowaniem. Ten projekt jest obecnie w fazie rozwoju. Aplikacja nie ma jeszcze połączenia z bazą danych. Planuję użyć w tym celu MongoDB, Node.js i Express.js. Docelowo strona będzie zbudowana zgodnie z "MERN stack"',
+    "Aplikacja umożliwiająca naukę za pomocą techniki pomodoro. Timer odlicza cztery 25 minutowe sekcji przeznaczone na naukę oraz 5 minutowe przerwy między nimi. Po ukończeniu wszystkich sekcji przewidziana jest dłuższa 15 minutowa przerwa.",
+    "Recover jest jedną z pierwszych stron, które stworzyłem. Projekt graficzny wykonał Marcin z Dutkiewicz Design. Projekt ten pozwolił mi lepiej poznać HTML, CSS i podstawy JavaScript",
+    'Aplikacja "Todo app" powstała w celu lepszej organizacji czasu. Pozwala dodać nam termin wykonania zadania, ustawić priorytet oraz liczy już wykonane. Aplikacja łączy się z bazą danych MongoDB Atlas a sam backend został napisany z użyciem Node.js, Express.js oraz MongoDB.',
+    "Shortly jest stroną umożliwiającą skracanie linków. Projekt powstał w ramach wyzwania Frontend Mentor. Dzięki tej stronie nauczyłem się w jaki sposób pobierać dane z API oraz jak je wyświetlać w swoich projektach.",
+  ];
+  const projectTxtEng = [
     "Acme is an example of a hotel website. The website was designed by Dutkiewicz Design. Marcin created a graphic design in Figma and I programmed everything myself. This project is currently in development. The application does not yet have a database connection. I plan to build this with Node.js, MongoDB and Express.js. Ultimately, the site will follow the MERN stack.",
-    "Pomodoro is an application designed for better time management. The timer counts down four 25-minute learning sections and 5-minute breaks between them. There is a 15-minute break after all sections are completed. ",
+    "Pomodoro is an application designed for better time management. The timer counts down four 25-minute learning sections and 5-minute breaks between them. There is a 15-minute break after all sections are completed.",
     "Recover is one of the first websites I created. The graphic design was done by Marcin from Dutkiewicz Design. This project allowed me to get to know HTML, CSS and the basics of JavaScript better",
     "An application designed to better organize your time. It allows you to set the priority of tasks and counts already completed. Adds a due date for the task. ",
+    "Shortly is a shortener link website. The project was created as part of the Frontend Mentor challenge. Thanks to this page, I learned how to get data from the API and how to display it in my projects.",
   ];
 
   return (
     <section className="projects">
       <div className="projects_wrapper">
         <h2>
-          Projects<span>.</span>
+          {props.language ? "Projekty" : "Projects"}
+          <span>.</span>
         </h2>
         <div className="left_right_wrapper">
           <div className="p_left_area">
@@ -112,12 +121,16 @@ function Projects() {
           </div>
           <div className="p_right_area">
             <h3>{projectTitle[activeSlide]}</h3>
-            <p>{projectTxt[activeSlide]}</p>
+            {props.language ? (
+              <p>{projectTxtPl[activeSlide]}</p>
+            ) : (
+              <p>{projectTxtEng[activeSlide]}</p>
+            )}
             <p className="link">
               Live: <a href={url[activeSlide]}>{url[activeSlide]}</a>
             </p>
             <p className="link">
-              Repository:{" "}
+              {props.language ? "Repozytorium: " : "Repository: "}
               <a href={repository[activeSlide]}>{repository[activeSlide]}</a>
             </p>
             <div className="technologies_used">

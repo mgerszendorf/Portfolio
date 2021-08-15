@@ -9,19 +9,35 @@ function AboutMe(props) {
       <div className="about_me_wrapper">
         <div className="left_area_am">
           <h2>
-            About <span>me</span>.
+            {props.language ? "O" : "About"}{" "}
+            <span>{props.language ? "mnie" : "me"}</span>.
           </h2>
-          <p className="left_area_txt_am">
-            My name is Marek Gerszendorf. I work as a junior machine constructor
-            daily, but programming is my great passion. I got interested in this
-            topic at the beginning of junior high school, but then It was mostly
-            a fun thing to do. For a long time, I have been devoting every free
-            moment to learning programming and it gives me great pleasure. Every
-            day I strive to expand my skills by learning about the latest
-            technologies and solutions.
-          </p>
+          {props.language ? (
+            <p className="left_area_txt_am">
+              Nazywam się Marek Gerszendorf. Na co dzień pracuję jako młodszy
+              konstruktor maszyn, ale moją wielką pasją jest programowanie.
+              Zainteresowałem się tym tematem już na początku gimnazjum ale
+              wtedy traktowałem to głownie jako zabawę. Od dłuższego czasu
+              poświęcam na naukę programowania każdą wolną chwilę i sprawia mi
+              to ogromną przyjemność. Codziennie dążę do poszerzania swoich
+              umiejętności poprzez poznawanie najnowszych technologii i
+              rozwiązań.
+            </p>
+          ) : (
+            <p className="left_area_txt_am">
+              My name is Marek Gerszendorf. I work as a junior machine
+              constructor daily, but programming is my great passion. I got
+              interested in this topic at the beginning of junior high school,
+              but then It was mostly a fun thing to do. For a long time, I have
+              been devoting every free moment to learning programming and it
+              gives me great pleasure. Every day I strive to expand my skills by
+              learning about the latest technologies and solutions.
+            </p>
+          )}
           <div className="more_info">
-            <Link to="/more_info">More info</Link>
+            <Link to="/more_info">
+              {props.language ? "Więcej" : "More info"}
+            </Link>
             <BsArrowRight className="more_info_arrow" />
             <div></div>
           </div>

@@ -14,17 +14,18 @@ import adobexd from "../img/adobexd_icon.png";
 import csharp from "../img/c#_icon.png";
 import ts from "../img/typescript_icon.png";
 
-function Skills() {
+function Skills(props) {
   return (
     <section className="skills">
       <div className="skills_header">
         <h2>
-          Skills<span>.</span>
+          {props.language ? "Umiejętności" : "Skills"}
+          <span>.</span>
         </h2>
       </div>
       <div className="skills_first_container">
         <div className="skills_subtitle">
-          <p>Main technologies</p>
+          <p>{props.language ? "Główne technologie" : "Main technologies"}</p>
         </div>
         <div className="first_container_technologies">
           <div className="html">
@@ -66,7 +67,11 @@ function Skills() {
         </div>
         <div className="skills_second_container">
           <div className="skills_subtitle">
-            <p>Technologies that I have been learning recently</p>
+            <p>
+              {props.language
+                ? "Technologie, których uczę się od niedawna"
+                : "Technologies that I have been learning recently"}
+            </p>
           </div>
           <div className="second_container_technologies">
             <div className="node">

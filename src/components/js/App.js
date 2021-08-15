@@ -18,7 +18,7 @@ import "../css/Contact.css";
 import "../css/Footer.css";
 
 function App() {
-  const [language, setLanguage] = useState(false);
+  const [language, setLanguage] = useState(true);
 
   function handleLanguage() {
     setLanguage(!language);
@@ -34,11 +34,11 @@ function App() {
               handleLanguage={handleLanguage}
               logo={logo}
             />
-            <AboutMe />
-            <Skills />
-            <Projects />
-            <Contact />
-            <Footer />
+            <AboutMe language={language} />
+            <Skills language={language} />
+            <Projects language={language} />
+            <Contact language={language} />
+            <Footer language={language} />
           </Route>
         </Switch>
       </Router>

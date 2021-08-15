@@ -1,7 +1,3 @@
-.c_right_area{
-    display: none;
-}
-
 .contact_wrapper{
     max-width: 1440px;
     margin: 0 auto;
@@ -17,19 +13,38 @@
     color: #F6C004;
 }
 
-.c_left_area p{
-    font-size: 16px;
+.c_txt{
+    display: flex;
+    justify-content: center;
 }
 
-.c_left_area div p{
+.c_txt p{
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 400px;
+    margin-bottom: 3rem;
+}
+
+.c_email_phone{
+    display: flex;
+    justify-content: center;
+}
+
+.c_email_phone div p{
     font-weight: 700;
     line-height: 1.5;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 .c_email, .c_phone{
     display: flex;
     align-items: center;
-    margin-top: 1.5rem;
+}
+
+.c_phone{
+    margin-left: 3rem;
 }
 
 .c_email_icon, .c_phone_icon{
@@ -38,19 +53,11 @@
 }
 
 @media all and (min-width: 1024px){
-    .c_right_area{
-        display: block;
-    }
-
-    .c_right_area, .c_left_area{
-        width: 50%;
-    }
-
-    .c_left_area p{
-        max-width: 500px;
-    }
-
     .contact_wrapper{
         padding: 10vh 2rem 5vh 2rem;
+    }
+
+    .c_txt p{
+        max-width: 500px;
     }
 }
