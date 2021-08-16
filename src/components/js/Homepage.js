@@ -8,23 +8,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
 
 function Homepage(props) {
-  const [burger, setBurger] = useState(false);
-
-  function handleClickBurger() {
-    setBurger(!burger);
-    if (burger) {
-      document.body.classList.remove("js-mobile-menu-open");
-    } else {
-      document.body.classList.add("js-mobile-menu-open");
-    }
-  }
-
-  console.log(burger);
-
-  function disableActiveMenu() {
-    document.body.classList.remove("js-mobile-menu-open");
-  }
-
   return (
     <section className="homepage">
       <nav className="top_bar">
@@ -40,7 +23,7 @@ function Homepage(props) {
             <img src={props.logo} alt="My logo" />
           </div>
         </LinkScroll>
-        <ul className={burger ? "active_burger" : "nonactive_burger"}>
+        <ul className={props.burger ? "active_burger" : "nonactive_burger"}>
           <li>
             <LinkScroll
               activeClass="active"
@@ -60,8 +43,8 @@ function Homepage(props) {
               smooth={true}
               duration={500}
               onClick={() => {
-                setBurger(false);
-                disableActiveMenu();
+                props.setBurger(false);
+                props.disableActiveMenu();
               }}
             >
               {props.language ? "Projekty" : "Projects"}
@@ -75,8 +58,8 @@ function Homepage(props) {
               smooth={true}
               duration={500}
               onClick={() => {
-                setBurger(false);
-                disableActiveMenu();
+                props.setBurger(false);
+                props.disableActiveMenu();
               }}
             >
               {props.language ? "Umiejętności" : "Skills"}
@@ -90,8 +73,8 @@ function Homepage(props) {
               smooth={true}
               duration={500}
               onClick={() => {
-                setBurger(false);
-                disableActiveMenu();
+                props.setBurger(false);
+                props.disableActiveMenu();
               }}
             >
               {props.language ? "Kontakt" : "Contact"}
@@ -120,7 +103,7 @@ function Homepage(props) {
           <div
             className="burger_mobile"
             onClick={() => {
-              handleClickBurger();
+              props.handleClickBurger();
             }}
           >
             <div></div>

@@ -17,6 +17,7 @@
     color: #F6C004;
 }
 
+
 .slider_mobile div{
     text-align: center;
 }
@@ -25,6 +26,50 @@
     width: 90vw;
     max-width: 600px;
     margin: 2rem 0;
+}
+
+.projects_wrapper_img_0, .projects_wrapper_img_1, .projects_wrapper_img_2, .projects_wrapper_img_3, .projects_wrapper_img_4{
+    position: relative;
+}
+
+.projects_img_0, .projects_img_1, .projects_img_2, .projects_img_3, .projects_img_4{
+    filter: blur(3px);
+}
+
+.active_project_0, .active_project_1, .active_project_2, .active_project_3, .active_project_4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 600px;
+    height: 90vw;
+    max-height: 600px;
+    background-color: rgba(236, 236, 236, 0.5);
+}
+
+.nonactive_project{
+    display: none;
+}
+
+.nonprojects_img{
+    filter: blur(0);
+}
+
+.active_project_0 div, .active_project_1 div, .active_project_2 div, .active_project_3 div, .active_project_4 div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.active_project_0 div a, .active_project_1 div a, .active_project_2 div a, .active_project_3 div a, .active_project_4 div a{
+    padding: 2rem;
+}
+
+.active_project_0 div a svg,.active_project_1 div a svg, .active_project_2 div a svg, .active_project_3 div a svg, .active_project_4 div a svg{
+    font-size: 8rem;
+    color: #2e2e2e;
 }
 
 @media all and (min-width: 1024px){

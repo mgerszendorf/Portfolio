@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,7 +13,10 @@ import {
   SiJavascript,
   SiReact,
   SiGithub,
+  SiMongodb,
 } from "react-icons/si";
+import { FaNode } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -42,6 +45,7 @@ function SamplePrevArrow(props) {
 
 function Projects(props) {
   const [activeSlide, setActiveSlider] = useState(0);
+  const [activeProject, setActiveProject] = useState(-1);
 
   const settings = {
     dots: true,
@@ -56,7 +60,28 @@ function Projects(props) {
     className: "slider",
   };
 
-  const projects = [acme, pomodoro, recover, todo_app, shortly];
+  const projects = [
+    {
+      id: 0,
+      name: acme,
+    },
+    {
+      id: 1,
+      name: pomodoro,
+    },
+    {
+      id: 2,
+      name: recover,
+    },
+    {
+      id: 3,
+      name: todo_app,
+    },
+    {
+      id: 4,
+      name: shortly,
+    },
+  ];
   const url = [
     "https://mgerszendorf.github.io/Acme/",
     "https://mgerszendorf.github.io/Pomodoro-app/",
@@ -106,15 +131,47 @@ function Projects(props) {
               <Slider {...settings}>
                 {projects.map((project) => (
                   <div>
-                    <img src={project} alt={project} />
+                    <img src={project.name} alt={project.name} />
                   </div>
                 ))}
               </Slider>
             </div>
             <div className="slider_mobile">
               {projects.map((project) => (
-                <div>
-                  <img src={project} alt={project} />
+                <div
+                  key={project.id}
+                  className={`projects_wrapper_img_${project.id}`}
+                  onClick={
+                    activeProject > -1
+                      ? () => setActiveProject(-1)
+                      : () => setActiveProject(project.id)
+                  }
+                >
+                  <img
+                    src={project.name}
+                    alt={project.name}
+                    className={
+                      activeProject === project.id
+                        ? `projects_img_${activeProject}`
+                        : "nonprojects_img"
+                    }
+                  />
+                  <div
+                    className={
+                      activeProject === project.id
+                        ? `active_project_${activeProject}`
+                        : "nonactive_project"
+                    }
+                  >
+                    <div>
+                      <a href={repository[activeProject]}>
+                        <SiGithub />
+                      </a>
+                      <a href={url[activeProject]}>
+                        <CgWebsite />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -147,7 +204,7 @@ function Projects(props) {
               {activeSlide === 0 || activeSlide === 1 || activeSlide === 3 ? (
                 <SiReact className="technologies_icon" />
               ) : null}
-              {activeSlide === 1 ? (
+              {activeSlide === 1 || activeSlide === 2 || activeSlide === 4 ? (
                 <SiJavascript className="technologies_icon" />
               ) : null}
               {activeSlide === 0 ||
@@ -156,6 +213,12 @@ function Projects(props) {
               activeSlide === 3 ||
               activeSlide === 4 ? (
                 <SiGithub className="technologies_icon" />
+              ) : null}
+              {activeSlide === 3 ? (
+                <SiMongodb className="technologies_icon" />
+              ) : null}
+              {activeSlide === 3 ? (
+                <FaNode className="technologies_icon" />
               ) : null}
             </div>
           </div>
