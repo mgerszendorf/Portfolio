@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -46,6 +46,7 @@ function SamplePrevArrow(props) {
 function Projects(props) {
   const [activeSlide, setActiveSlider] = useState(0);
   const [activeProject, setActiveProject] = useState(-1);
+  const [activeLink, setActiveLink] = useState(false);
 
   const settings = {
     dots: true,
@@ -130,7 +131,7 @@ function Projects(props) {
             <div className="slider_desktop">
               <Slider {...settings}>
                 {projects.map((project) => (
-                  <div>
+                  <div key={project.id}>
                     <img src={project.name} alt={project.name} />
                   </div>
                 ))}
@@ -142,7 +143,7 @@ function Projects(props) {
                   key={project.id}
                   className={`projects_wrapper_img_${project.id}`}
                   onClick={
-                    activeProject > -1
+                    activeProject > -1 && activeLink
                       ? () => setActiveProject(-1)
                       : () => setActiveProject(project.id)
                   }
@@ -155,6 +156,7 @@ function Projects(props) {
                         ? `projects_img_${activeProject}`
                         : "nonprojects_img"
                     }
+                    onClick={() => setActiveLink(false)}
                   />
                   <div
                     className={
@@ -164,10 +166,16 @@ function Projects(props) {
                     }
                   >
                     <div>
-                      <a href={repository[activeProject]}>
+                      <a
+                        href={repository[activeProject]}
+                        onClick={() => setActiveLink(true)}
+                      >
                         <SiGithub />
                       </a>
-                      <a href={url[activeProject]}>
+                      <a
+                        href={url[activeProject]}
+                        onClick={() => setActiveLink(true)}
+                      >
                         <CgWebsite />
                       </a>
                     </div>

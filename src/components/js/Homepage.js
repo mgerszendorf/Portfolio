@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 import { Link as LinkScroll } from "react-scroll";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import poland from "../img/poland.png";

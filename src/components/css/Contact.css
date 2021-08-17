@@ -7,6 +7,7 @@
 .contact_wrapper h2, .contact_wrapper h2 span{
     font-size: 4rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .contact_wrapper h2 span{
@@ -28,7 +29,9 @@
 
 .c_email_phone{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
 }
 
 .c_email_phone div p{
@@ -44,7 +47,7 @@
 }
 
 .c_phone{
-    margin-left: 3rem;
+    margin-top: 1rem;
 }
 
 .c_email_icon, .c_phone_icon{
@@ -59,5 +62,15 @@
 
     .c_txt p{
         max-width: 500px;
+    }
+
+    .c_email_phone{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .c_phone{
+        margin: 0 0 0 3rem;
     }
 }

@@ -1,12 +1,7 @@
-.about_me{
-    /* background-color: #F1F1EF; */
-    /* background-color: #F6F6F8; */
-    /* background-color: #FBF5E2; */
-}
-
 .about_me_wrapper{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     flex-wrap: wrap;
     padding: 5vh 2rem;
 }
@@ -14,6 +9,7 @@
 .left_area_am h2, .left_area_am h2 span{
     font-size: 4rem;
     margin-bottom: 2rem;
+    /* text-align: center; */
 }
 
 .left_area_am h2 span{
@@ -105,6 +101,7 @@
         max-width: 1440px;
         margin: 0 auto;
         padding: 10vh 2rem;
+        justify-content: space-between;
     }
 
     .right_area_am{
