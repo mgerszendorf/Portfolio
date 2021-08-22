@@ -45,7 +45,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/Portfolio">
+          <Route path="/Portfolio">
             <Homepage
               language={language}
               handleLanguage={handleLanguage}

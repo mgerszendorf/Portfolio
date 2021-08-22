@@ -115,7 +115,7 @@ function Projects(props) {
     "Acme is an example of a hotel website. The website was designed by Dutkiewicz Design. Marcin created a graphic design in Figma and I programmed everything myself. This project is currently in development. The application does not yet have a database connection. I plan to build this with Node.js, MongoDB and Express.js. Ultimately, the site will follow the MERN stack.",
     "Pomodoro is an application designed for better time management. The timer counts down four 25-minute learning sections and 5-minute breaks between them. There is a 15-minute break after all sections are completed.",
     "Recover is one of the first websites I created. The graphic design was done by Marcin from Dutkiewicz Design. This project allowed me to get to know HTML, CSS and the basics of JavaScript better",
-    "An application designed to better organize your time. It allows you to set the priority of tasks and counts already completed. Adds a due date for the task. ",
+    'The "Todo app" was created to better organize your time. It allows us to add a due date for the task, set the priority and counts already completed. The application connects to the MongoDB Atlas database and the backend itself was written using Node.js, Express.js and MongoDB.',
     "Shortly is a shortener link website. The project was created as part of the Frontend Mentor challenge. Thanks to this page, I learned how to get data from the API and how to display it in my projects.",
   ];
 
@@ -212,7 +212,7 @@ function Projects(props) {
               {activeSlide === 0 || activeSlide === 1 || activeSlide === 3 ? (
                 <SiReact className="technologies_icon" />
               ) : null}
-              {activeSlide === 1 || activeSlide === 2 || activeSlide === 4 ? (
+              {activeSlide === 2 || activeSlide === 4 ? (
                 <SiJavascript className="technologies_icon" />
               ) : null}
               {activeSlide === 0 ||

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import React from "react";
 import { Link as LinkScroll } from "react-scroll";
+import { Link } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import poland from "../img/poland.png";
 import united_kingdom from "../img/united-kingdom.png";
@@ -11,18 +11,11 @@ function Homepage(props) {
   return (
     <section className="homepage">
       <nav className="top_bar">
-        <LinkScroll
-          activeClass="active"
-          to="/"
-          spy={true}
-          smooth={true}
-          offset={-70}
-          duration={500}
-        >
+        <Link to="/Portfolio">
           <div className="logo">
             <img src={props.logo} alt="My logo" />
           </div>
-        </LinkScroll>
+        </Link>
         <ul className={props.burger ? "active_burger" : "nonactive_burger"}>
           <li>
             <LinkScroll
@@ -82,7 +75,7 @@ function Homepage(props) {
           </li>
         </ul>
         <div className="burger_language_cv_container">
-          <Link to="/">
+          <Link to="/Portfolio">
             <div className="language">
               <img
                 onClick={props.handleLanguage}
@@ -92,7 +85,11 @@ function Homepage(props) {
             </div>
           </Link>
           <Link
-            to={props.language ? "/files/cv_pl.pdf" : "/files/cv_eng.pdf"}
+            to={
+              props.language
+                ? "/Portfolio/files/cv_pl.pdf"
+                : "/Portfolio/files/cv_eng.pdf"
+            }
             target="_blank"
             download
           >

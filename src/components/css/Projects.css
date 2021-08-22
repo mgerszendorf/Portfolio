@@ -89,7 +89,7 @@
         display: flex;
         justify-content: center;
         width: 50%;
-        height: 600px;
+        /* height: 600px; */
     }
 
     .slider {
@@ -120,7 +120,7 @@
 
     .p_right_area h3{
         font-size: 3rem;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
     }
 
     .p_right_area p{
@@ -135,7 +135,7 @@
 
     .technologies_icon{
         font-size: 3.5rem;
-        margin: 5rem 1.5rem 0 0;
+        margin: 4rem 1.5rem 0 0;
     }
 
     .link{
